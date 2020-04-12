@@ -13,11 +13,10 @@ type: article
 
   <div class="article__content" itemprop="articleBody">{{ content }}</div>
 
-<!--  {%- if _sharing -%}-->
-<!--    <section class="article__sharing d-print-none">{%- include sharing.html -%}</section>-->
-<!--  {%- endif -%}-->
+  {%- if _sharing -%}
+    <section class="article__sharing d-print-none">{%- include sharing.html -%}</section>
+  {%- endif -%}
   <section class="page__comments d-print-none">{%- include gitalk.html -%}</section>
-<!--  {%- include comments-providers/gitalk.html -%}-->
   <div class="d-print-none">
     {%- include article-footer.html -%}
     {%- include article-section-navigator.html -%}
