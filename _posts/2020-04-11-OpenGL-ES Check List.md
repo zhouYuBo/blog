@@ -28,7 +28,7 @@ EAGLContext *eglContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpen
 
 删除当前上下文
 if ([EAGLContext currentContext] == self.context) {
-		 [EAGLContext setCurrentContext:nil];
+    [EAGLContext setCurrentContext:nil];
 }
 self.context = nil;
 ```
