@@ -13,32 +13,25 @@ tags: []
 
 ### 渲染管线图
 
-![截屏2020-04-11 下午10.32.24](/Users/zhouyubo/Desktop/SnapShot/截屏2020-04-11 下午10.32.24.png)
+<center>
+<img src ="/assets/article/OpenGL-ES-pipelining.png" width="424" height="300.0" />
+</center>
 
 ### 上下文管理
 
-1. 创建上下文
+```
+创建上下文
+EAGLContext *eglContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
 
-   ```objective-c
-   EAGLContext *eglContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
-   ```
+切换上下文
+[EAGLContext setCurrentContext:eglContext];
 
-2. 切换上下文
-
-   ```objective-c
-   [EAGLContext setCurrentContext:eglContext];
-   ```
-
-   
-
-3. 删除当前上下文
-
-   ```objective-c
-   if ([EAGLContext currentContext] == self.context) {
-           [EAGLContext setCurrentContext:nil];
-   }
-   self.context = nil;
-   ```
+删除当前上下文
+if ([EAGLContext currentContext] == self.context) {
+		 [EAGLContext setCurrentContext:nil];
+}
+self.context = nil;
+```
 
 ### 渲染管线内容要点
 
