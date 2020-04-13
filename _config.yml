@@ -128,6 +128,7 @@ comments:
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
+    enable: ture
     clientID    : 998d442b0ce7e5e93d64 # GitHub Application Client ID
     clientSecret: 36f28cf73a700a837b508bdffb01dd308fc31716 # GitHub Application Client Secret
     repository  : talk #GitHub repo
