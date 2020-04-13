@@ -2,6 +2,7 @@
 title: OpenGL-ES Check List
 tags:
 - OpenGL-ES
+key: OpenGL-ES Check List
 ---
 
 ## 前言
