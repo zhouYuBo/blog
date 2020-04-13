@@ -132,7 +132,7 @@ comments:
     clientSecret: 36f28cf73a700a837b508bdffb01dd308fc31716 # GitHub Application Client Secret
     repository  : talk #GitHub repo
     owner       : zhouyubo # GitHub repo owner
-    admin: [zhouyubo] # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
+    admin: zhouyubo # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
       # - your GitHub Id
 
   ## Valine
