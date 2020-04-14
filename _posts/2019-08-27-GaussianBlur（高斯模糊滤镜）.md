@@ -1,6 +1,8 @@
 ---
 title: GPUImage2中的GaussianBlur（高斯模糊滤镜）
 key: GPUImage2中的GaussianBlur(2019-11-07)
+tags:
+- GPUImage源码分析
 ---
 
 ## 前言

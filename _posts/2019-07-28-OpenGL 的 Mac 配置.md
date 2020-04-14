@@ -1,6 +1,8 @@
 ---
 title: OpenGL 的 Mac 配置
 key: OpenGL 的 Mac 配置(2019-09-26)
+tags:
+- OpenGL
 ---
 
 # 前言
