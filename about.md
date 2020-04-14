@@ -21,7 +21,6 @@ titles:
   fr-CH: À propos
   fr-FR: À propos
   fr-LU: À propos
-key: page-about
 ---
 
-欢迎阅读！
+如有疑问或建议请联系YuBo_Zhou@163.com。
