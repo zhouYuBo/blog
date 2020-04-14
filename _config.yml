@@ -129,9 +129,9 @@ comments:
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
     enable: true
-    clientID    : cd0c8c60432d7ac47e57
+    clientID    : cd841383f64406749fdd
  #998d442b0ce7e5e93d64 # GitHub Application Client ID
-    clientSecret: c9fa1b293680caab622aa81382db6a843f587704 #36f28cf73a700a837b508bdffb01dd308fc31716 # GitHub Application Client Secret
+    clientSecret: c9ca6cd793b58050642bcdbd469e250e6451757b #36f28cf73a700a837b508bdffb01dd308fc31716 # GitHub Application Client Secret
     repository  : talk #GitHub repo
     owner       : YuBo-Zhou #zhouyubo # GitHub repo owner
     admin: [YuBo-Zhou] #zhouyubo # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
