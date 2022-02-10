@@ -6,28 +6,28 @@
 
 // main colors
 $main-color-1:     #ff9500;
-$text-color-1:     rgba(#fff, .8);
+$text-color-1:     rgba(#fff, .95);
 
 $main-color-2:     #ff006a;
-$text-color-2:     rgba(#fff, .8);
+$text-color-2:     rgba(#fff, .95);
 
 $main-color-3:     #202020;
-$text-color-3:     rgba(#fff, .8);
+$text-color-3:     rgba(#fff, .95);
 
 $main-color-theme-light: rgba(#000, .8);
 $main-color-theme-dark:  rgba(#fff, .8);
 
 // page background
-$background-color: #121212;
+$background-color: #333333;
 
 // text colors
 $text-color-theme-light-d: #000;
 $text-color-theme-light:   #222;
 $text-color-theme-light-l: #888;
 
-$text-color-theme-dark-d:  rgba(#fff, .8);
-$text-color-theme-dark:    rgba(#fff, .7);
-$text-color-theme-dark-l:  rgba(#fff, .5);
+$text-color-theme-dark-d:  rgba(#fff, .95);
+$text-color-theme-dark:    rgba(#fff, .95);
+$text-color-theme-dark-l:  rgba(#fff, .8);
 
 $text-color-d:     $text-color-theme-dark-d;
 $text-color:       $text-color-theme-dark;
