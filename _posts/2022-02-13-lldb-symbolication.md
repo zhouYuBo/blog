@@ -274,6 +274,6 @@ Options:
 
 [LLDB官方文档原文](https://lldb.llvm.org/use/symbolication.html)
 
-[iOS Crash Log解析](https://gsl201600.github.io/2020/04/29/iOSCrash%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E5%8F%8A%E7%AC%A6%E5%8F%B7%E5%8C%96/)
+[iOS Crash文件获取及符号化](https://gsl201600.github.io/2020/04/29/iOSCrash%E6%96%87%E4%BB%B6%E8%8E%B7%E5%8F%96%E5%8F%8A%E7%AC%A6%E5%8F%B7%E5%8C%96/)
 
 [理解iOS Crash Log](https://blog.csdn.net/Hello_Hwc/article/details/80946318)
