@@ -11,12 +11,11 @@ tags:
 2. 命令行工具symbolicatecrash + 对应UUID的dSYM。
 3. LLDB命令/脚本。
 
-绝大多数情况下我们会使用第二种方式，因为公司每个app发布的历史版本都保留着对应的可执行文件+dSYM，出现线上闪退/常卡顿上报，都可以通过这种方式解决。
+绝大多数情况下我们会使用第二种方式，因为公司每个app发布的历史版本都保留着对应的可执行文件与dSYM，出现线上闪退/常卡顿上报，都可以通过这种方式解决。
 
 那我们还需要LLDB命令/脚本进行符号化么？会。这里列举一些场景：
-
 - 特殊情况下，某些测试企业包可能很难以找到对应的dSYM文件。这个时候我们可以查看Crash logs日志文件对应各个库的UUID，并从已有的dSYM文件中检索，分别找到各个库UUID对应的dSYM文件，逐个映射。
-- 制作定制的解析工具。
+- 制作专属的解析工具。
 - 挖掘更细的信息，比如闪退时候的堆栈汇编、寄存器信息（可以通过LLDB辅助查看）。
 
 以下是对官方的LLDB符号化文档的转译笔记。
@@ -34,7 +33,7 @@ LLDB 是一个包含调试以及command解释器功能的动态库。LLDB可以�
 (lldb) target create --no-dependents --arch x86_64 /tmp/a.out
 ```
 
-通过使用‘--no-dependents’ flag，可以不加载可执行文件所依赖的其他所有动态库。在不使用‘--no-dependents’ flag的情况下，可执行文件所依赖的/usr/lib路径下的动态库将会被加载进来，而此路径下的动态库可能与闪退日志中的版本号不同。
+通过使用‘--no-dependents’ flag，可以不加载可执行文件所依赖的其他所有动态库。在不使用--no-dependents的情况下，可执行文件所依赖的/usr/lib路径下的动态库将会被加载进来，而此路径下的动态库可能与闪退日志中的版本号不同。
 
 ‘image list’ 命令会列出当前target所关联的动态库。
 
@@ -80,7 +79,7 @@ LLDB 是一个包含调试以及command解释器功能的动态库。LLDB可以�
 
 ## 为Sections设置加载地址
 
-当符号化crash log的时候，需要将crashlog-address转换为库符号所对应的地址。为了避免逐个计算映射，我们可以为target中的modules的每个区设置加载地址；也可以为所有的sections设置相同的偏移量（slide）。‘target modules load --slide’命令为所有sections设置偏移量。
+当符号化crash log的时候，需要将crashlog-address转换为库符号所对应的地址。为了避免逐个计算映射，我们可以为target中的modules的每个区设置加载地址；也可以为所有的sections设置相同的偏移量slide。‘target modules load --slide’命令为所有sections设置偏移量。
 
 ```
 (lldb) target create --no-dependents --arch x86_64 /tmp/a.out
