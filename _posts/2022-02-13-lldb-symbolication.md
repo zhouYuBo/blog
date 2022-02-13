@@ -11,9 +11,8 @@ tags:
 2. 命令行工具symbolicatecrash + 对应UUID的dSYM。
 3. LLDB命令/脚本。
 
-绝大多数情况下我们会使用第二种方式，因为公司每个app发布的历史版本都保留着对应的可执行文件与dSYM，出现线上闪退/常卡顿上报，都可以通过这种方式解决。
+&#8195;&#8195;绝大多数情况下我们会使用第二种方式，因为公司每个app发布的历史版本都保留着对应的可执行文件与dSYM，出现线上闪退/常卡顿上报，都可以通过这种方式解决。那我们还需要LLDB命令/脚本进行符号化么？会，这里列举一些场景：
 
-那我们还需要LLDB命令/脚本进行符号化么？会。这里列举一些场景：
 - 特殊情况下，某些测试企业包可能很难以找到对应的dSYM文件。这个时候我们可以查看Crash logs日志文件对应各个库的UUID，并从已有的dSYM文件中检索，分别找到各个库UUID对应的dSYM文件，逐个映射。
 - 制作专属的解析工具。
 - 挖掘更细的信息，比如闪退时候的堆栈汇编、寄存器信息（可以通过LLDB辅助查看）。
@@ -22,7 +21,7 @@ tags:
 
 ## LLDB 创建Target
 
-LLDB 是一个包含调试以及command解释器功能的动态库。LLDB可以用来符号化crash logs，相比于其他符号化工具，能够提供更多的信息：
+&#8195;&#8195;LLDB 是一个包含调试以及command解释器功能的动态库。LLDB可以用来符号化crash logs，相比于其他符号化工具，能够提供更多的信息：
 
 - Inlined functions （内联函数）
 - 地址所在作用域相关的变量、变量所在的位置（所使用寄存器/栈区偏移量）
@@ -79,14 +78,14 @@ LLDB 是一个包含调试以及command解释器功能的动态库。LLDB可以�
 
 ## 为Sections设置加载地址
 
-当符号化crash log的时候，需要将crashlog-address转换为库符号所对应的地址。为了避免逐个计算映射，我们可以为target中的modules的每个区设置加载地址；也可以为所有的sections设置相同的偏移量slide。‘target modules load --slide’命令为所有sections设置偏移量。
+&#8195;&#8195;当符号化crash log的时候，需要将crashlog-address转换为库符号所对应的地址。为了避免逐个计算映射，我们可以为target中的modules的每个区设置加载地址；也可以为所有的sections设置相同的偏移量slide。‘target modules load --slide’命令为所有sections设置偏移量。
 
 ```
 (lldb) target create --no-dependents --arch x86_64 /tmp/a.out
 (lldb) target modules load --file a.out --slide 0x123000
 ```
 
-通常符号化的时候需要为每个区设置不同的加载地址。Crash logs文件中 ‘Binary Images’区会显示所有动态库中\_\_TEXT segment'的加载地址，通过‘target modules load section address’命令为每个\_\_Text segment 指定各自的加载地址，可以省去很多地址映射的计算，并且指定加载地址后image lookup命令依旧可以匹配查找地址。
+&#8195;&#8195;通常符号化的时候需要为每个区设置不同的加载地址。Crash logs文件中 ‘Binary Images’区会显示所有动态库中\_\_TEXT segment'的加载地址，通过‘target modules load section address’命令为每个\_\_Text segment 指定各自的加载地址，可以省去很多地址映射的计算，并且指定加载地址后image lookup命令依旧可以匹配查找地址。
 
 ```
 (lldb) target create --no-dependents --arch x86_64 /tmp/a.out
