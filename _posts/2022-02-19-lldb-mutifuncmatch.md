@@ -5,8 +5,6 @@ tags:
 - LLDB脚本
 ---
 
-# LLDB断点命令脚本——函数栈中多函数名匹配
-
 ## 诉求的产生
 
 项目中有某一个函数funZ，调用到函数funZ的路径可能有多个，例如：
@@ -50,8 +48,6 @@ tags:
 
 ## 脚本的使用
 
-[脚本](https://github.com/YuBo-Zhou/LLDBScript/blob/main/breakifonfuncset.py)存在github仓库里。
-
 使用命令如下：
 
 1. 匹配目标1
@@ -76,3 +72,7 @@ tags:
    biofset -d d regex0 [Optional_ModuleName] ||| regex1  ModuleName1 ||| regex2 ModuleName2
    此处只是替换了 -d 后边 为‘m’，m（messy)代表乱序匹配
    ```
+	 
+## 脚本地址
+
+[脚本](https://github.com/YuBo-Zhou/LLDBScript/blob/main/breakifonfuncset.py)存在github仓库里。
