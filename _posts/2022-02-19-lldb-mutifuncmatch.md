@@ -69,7 +69,7 @@ tags:
 3. 匹配目标3
 
    ```
-   biofset -d d regex0 [Optional_ModuleName] ||| regex1  ModuleName1 ||| regex2 ModuleName2
+   biofset -d m regex0 [Optional_ModuleName] ||| regex1  ModuleName1 ||| regex2 ModuleName2
    此处只是替换了 -d 后边 为‘m’，m（messy)代表乱序匹配
    ```
 	 
