@@ -92,11 +92,11 @@ Reveal动态库加载流程如下图：
 
 <img src ="/assets/article/Revealsubload.png" width="1000" height="531" />
 
-* 第三次触发的是‘substitute-insert.dylib’触发open ‘substitute-loader.dylib’。
+* 第三次触发的是‘substitute-loader.dylib’’触发open ‘RHRevealLoader.dylib’。
 
 <img src ="/assets/article/RevealRloader.png" width="1000" height="606" />
 
-* 第四次触发的是‘substitute-insert.dylib’触发open ‘substitute-loader.dylib’。
+* 第四次触发的是‘RHRevealLoader.dylib’触发open ‘libReveal.dylib’。
 
 <img src ="/assets/article/ReveallibR.png" width="1000" height="568" />
 ## 越狱手机Reveal配置
