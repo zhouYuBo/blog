@@ -135,6 +135,7 @@ comments:
     owner       : YuBo-Zhou #zhouyubo # GitHub repo owner
     admin: [YuBo-Zhou] #zhouyubo # GitHub repo owner and collaborators, only these guys can initialize GitHub issues, IT IS A LIST.
       # - your GitHub Id
+    proxy: https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token
 
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
