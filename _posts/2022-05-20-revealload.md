@@ -46,7 +46,7 @@ Reveal动态库加载流程如下图：
 
 
 
-## 探究越狱手机端Reveal的动态库加载流程
+## 探究越狱手机Reveal库的加载
 ### 查看App的动态库列表
 
 1. MAC连接手机，USB映射通信接口。
@@ -65,7 +65,7 @@ Reveal动态库加载流程如下图：
 
 <img src ="/assets/article/RevealDebugserver.png" width="1000" height="114" />
 <img src ="/assets/article/RevealdyldStart.png" width="500" height="186" />
-### 查看DYLD_INSERT_LIBRARIES环境变量的值
+### DYLD_INSERT_LIBRARIES的值
 * 根据dyld的加载流程，紧接目前程序暂停的位置，搜索符号“dyld`**ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&)**“。
 
 <img src ="/assets/article/RevealProcess.png" width="1000" height="207" />
@@ -79,7 +79,7 @@ Reveal动态库加载流程如下图：
 
 <img src ="/assets/article/RevealInsertLi.png" width="1000" height="541" />
 
-### 设置dlopen 断点查看Reveal与越狱系统Substitute库加载过程
+### dlopen断点查看相关库加载过程
 * 为dlopen设置断点，触发条件设置为当第一个参数中包含‘Reveal’或‘substitute’。
 
 <img src ="/assets/article/RevealBdlopen.png" width="1000" height="220" />

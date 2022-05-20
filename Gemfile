@@ -5,3 +5,5 @@ source "http://gems.ruby-china.com"
  gem 'jekyll-admin', group: :jekyll_plugins
 
 
+
+gem "webrick", "~> 1.7"
